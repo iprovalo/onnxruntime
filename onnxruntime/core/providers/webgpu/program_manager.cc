@@ -38,6 +38,8 @@ Status ProgramManager::NormalizeDispatchGroupSize(uint32_t& x, uint32_t& y, uint
   return Status::OK();
 }
 
+int DD = 0;
+
 Status ProgramManager::Build(const ProgramBase& program,
                              const ProgramMetadata& program_metadata,
 #ifndef NDEBUG  // if debug build
@@ -67,7 +69,8 @@ Status ProgramManager::Build(const ProgramBase& program,
   std::string code;
   ORT_RETURN_IF_ERROR(shader_helper.GenerateSourceCode(code, shape_uniform_ranks));
 
-  LOGS_DEFAULT(VERBOSE) << "\n=== WebGPU Shader code [" << program.Name()
+  // LOGS_DEFAULT(VERBOSE)
+  if (DD) std::cerr << "\n=== WebGPU Shader code [" << program.Name()
 #ifndef NDEBUG  // if debug build
                         << ", Key=\"" << program_key << "\""
 #endif
