@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./build.sh --android_abi arm64-v8a --build_dir build_android_arm64-v8a --android --android_sdk_path $ANDROID_HOME --android_ndk_path $ANDROID_NDK --android_api 27 --config RelWithDebInfo --build_shared_lib --parallel --compile_no_warning_as_error --skip_submodule_sync --build_java
+./build.sh --android_abi armeabi-v7a --build_dir build_android_armeabi-v7a --android --android_sdk_path $ANDROID_HOME --android_ndk_path $ANDROID_NDK --android_api 27 --config RelWithDebInfo --build_shared_lib --parallel --compile_no_warning_as_error --skip_submodule_sync --build_java
+./build.sh --android_abi x86 --build_dir build_android_x86 --android --android_sdk_path $ANDROID_HOME --android_ndk_path $ANDROID_NDK --android_api 27 --config RelWithDebInfo --build_shared_lib --parallel --compile_no_warning_as_error --skip_submodule_sync --build_java
+./build.sh --android_abi x86_64 --build_dir build_android_x86_64 --android --android_sdk_path $ANDROID_HOME --android_ndk_path $ANDROID_NDK --android_api 27 --config RelWithDebInfo --build_shared_lib --parallel --compile_no_warning_as_error --skip_submodule_sync --build_java
