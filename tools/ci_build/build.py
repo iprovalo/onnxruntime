@@ -1813,7 +1813,7 @@ def run_android_tests(args, source_dir, build_dir, config, cwd):
         else:
             adb_shell(f"cd {device_dir} && {cmd}")
 
-    if args.android_abi == "x86_64_IP":
+    if args.android_abi == "x86_64":
         with contextlib.ExitStack() as context_stack:
             if args.android_run_emulator:
                 avd_name = "ort_android"
