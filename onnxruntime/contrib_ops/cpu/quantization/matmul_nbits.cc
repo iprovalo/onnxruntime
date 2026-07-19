@@ -1271,10 +1271,7 @@ Status MatMulNBits<T1>::Compute(OpKernelContext* ctx) const {
       kCpuExecutionProvider,                                             \
       KernelDefBuilder()                                                 \
           .TypeConstraint("T1", DataTypeImpl::GetTensorType<T1>())       \
-          .TypeConstraint("T2", DataTypeImpl::GetTensorType<uint8_t>())  \
-          .TypeConstraint("T3", {DataTypeImpl::GetTensorType<uint8_t>(), \
-                                 DataTypeImpl::GetTensorType<T1>()})     \
-          .TypeConstraint("T4", DataTypeImpl::GetTensorType<int32_t>()), \
+          .TypeConstraint("T2", DataTypeImpl::GetTensorType<uint8_t>()), \
       MatMulNBits<T1>);
 
 REGISTER_MatMulNBits(float);
